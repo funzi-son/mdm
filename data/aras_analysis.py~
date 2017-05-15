@@ -1,0 +1,81 @@
+"""
+Analyse ARAS data
+Son N. Tran
+"""
+import glob
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+
+import operator
+
+act_count_A = {0: 1, 1: 1, 6: 1, 11: 1, 12: 1, 15: 1, 16: 1, 18: 1, 19: 1, 26: 1, 8: 8, 24: 8, 7: 87, 21: 289, 14: 300, 22 : 421, 9 : 621, 20 : 724, 13: 2706, 17: 3388, 23: 4146, 2: 5648, 25: 5994, 10: 7201, 3: 7206, 5: 23353, 4: 28903}
+
+act_count_B = {1: 1, 3: 1, 10: 1, 11: 1, 14: 1, 15: 1, 16: 1, 19: 1, 21: 1, 26: 1, 24: 2, 5: 7, 0: 66, 20: 215, 7: 276, 22: 439, 9: 743, 13: 822, 18: 1855, 17: 1880, 8: 1923, 23: 2648, 2: 5289, 6: 7507, 4: 10187, 12: 65581}
+
+DATA_DIR = "/home/tra161/WORK/Data/ARAS/"
+HOUSE = "House_B"
+
+def get_infor():
+    files = glob.glob(DATA_DIR + HOUSE + "/*.txt")
+    acts = {}
+    act_pairs = []
+    sensors = []
+    not_binary = False
+    for f in files:
+        with open(f) as f_reader:
+            for line in f_reader:
+                strs = line.split(" ")
+                s = 0
+                for i in range(20):
+                    sval = int(strs[i])
+                    s += sval
+                    if sval !=0 and sval !=1:
+                        not_binary = True
+                #if s>1:
+                #    print('more than 1 sensor is activated')
+                a_pair = [int(strs[20])-1,int(strs[21].rstrip('\n'))-1]
+                s_state = [int(x) for x in strs[0:20]]
+                if a_pair not in act_pairs:
+                    act_pairs.append(a_pair)
+                if s_state not in sensors:
+                    sensors.append(s_state)
+                
+                if a_pair[0] not in acts:
+                    acts[a_pair[0]] =  1
+                else:
+                    acts[a_pair[0]] += 1
+                if a_pair[1] not in acts:
+                    acts[a_pair[1]] = 1
+                else:
+                    acts[a_pair[1]] = 1
+
+    if not_binary:
+        print('Not binary values')
+    #print(act_pairs)
+    print(sensors)
+    #acts = sorted(acts.items(),key=operator.itemgetter(1))
+    #print(acts)
+
+def act_analysis():
+    files = glob.glob(DATA_DIR + HOUSE + "/*.txt")
+    matrix = np.zeros((27,27),dtype=np.float)
+    for f in files:
+        with open(f) as f_reader:
+            for line in f_reader:
+                strs = line.split(" ")
+
+                matrix[int(strs[20])-1,int(strs[21].rstrip('\n'))-1]+=1
+
+    matrix = matrix/np.sum(matrix)
+    plt.imshow(matrix,interpolation='nearest')
+    plt.plot([0,26],[0,26])
+    plt.colorbar()
+    plt.xlim([0,26])
+    plt.ylim([0,26])
+    plt.show()
+                
+if __name__=='__main__':
+    #get_infor()
+    act_analysis()

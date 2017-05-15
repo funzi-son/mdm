@@ -1,0 +1,8 @@
+"""
+POS dataset reader
+
+Son N. Tran
+
+"""
+
+class PennTreePOS(object)

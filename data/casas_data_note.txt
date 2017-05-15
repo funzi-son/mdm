@@ -1,0 +1,8 @@
+1. Only 37 sensors are seen in the dataset, including M (motion sensors), D (door/cabinet sensors), I (item sensors).
+2. All sensor have too states (M: ON/OFF, I: ABSENT/PRESENT, D: OPEN/CLOSE)
+3. M24 is never seen OFF, only two time it appears in the data
+2008-12-09	17:58:42.1036	M24	ON 2 15
+ /home/tra161/WORK/Data/CASAS/adlmr/P24.txt
+2008-11-19	15:03:48.283999	M24	ON 2 15 1 14
+ /home/tra161/WORK/Data/CASAS/adlmr/P11.txt
+

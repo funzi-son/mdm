@@ -1,0 +1,199 @@
+####################### PHMM WITH CROSS_DEPENDENCY VERTICES #####################
+####################### or in short, call this Coupled HMMs: CHMM ##############
+class CHMM_DIS(object):
+    ## Parallel HMM with observation as a single discrete variable
+    def __init__(self,dataset):
+        self.dataset = dataset
+        self.xsize = xsize = dataset.total_sensor_values()
+        self.hsize = hsize = dataset.separate_act_nums()
+        self.combined_act_num = dataset.total_combined_acts()
+        self.rnum = rnum = dataset.resident_num
+
+        self.tweights = []
+        self.eweights = []
+        for i in range(rnum):
+            self.tweights.append(np.zeros((self.combined_act_num,hsize[i]),dtype=np.float))
+            self.eweights.append(np.zeros(hsize[i],xsize),dtype=np.float)
+            
+    def estimate_params(self):
+        while True:
+            prev_act,curr_act,sensor = self.dataset.next()
+            # Update transaction probability table
+            # tweights[j',j] = p^k(j|j')
+            if curr_act is not None:
+                cmb_curr_act = self.dataset.act_map(curr_act)
+            else:
+                break
+
+            if prev_act is not None:
+                cmb_prev_act = self.dataset.act_map(prev_act)
+                for i in range(self.rnum):
+                    self.tweights[i][cmb_prev_act,self.dataset.spr_act_map(curr_act[i],i)] +=1
+                    
+            # Update emission probability table
+            if sensor is not None:
+                sensor = self.dataset.sensor_map(sensor)
+                for i in range(self.rnum):
+                    self.eweights[i][self.dataset.spr_act_map(curr_act[i]),sensor]
+        #priors: act_num x num_residents
+        self.prior = self.dataset.get_prior('separate')
+        # Laplace smoothing and normalise
+        self.normalise()
+        #combine log_prior, log transition, log emmision
+        self.prior, self.tweights, self.eweights = self.combined_log_params()
+
+    def combine_log_params(self):
+        ### TO CHECK 
+        combined_acts = self.dataset.get_act_dict()
+        _prior    = np.zeros((1,self.combined_act_num),dtype=np.float)
+        _tweghts  = np.zeros((self.combined_act_num,self.combined_act_num),dtype=np.float)
+        _eweights = np.zeros((self.combined_act_num,self.xsize),dtype=np.float)
+        for j in range(self.combined_act_num):
+            for r in range(self.rnum):
+                inx = self.spr_act_map(combined_acts[j][r],r)
+                _prior[0,j] += self.prior[r][r,inx]
+            
+            for i in range(self.xsize):
+                for r in range(self.r_num):
+                    _eweights[j,i] += self.eweights[r][j,i]
+                    
+            for j_ in range(self.combined_act_num):
+                for r in range(self.rnum):
+                    inx = self.spr_act_map(combined_acts[j][r],r)
+                    _tweights[j_,j] +=  self.tweights[r][j_,inx]
+                    
+        return _prior, _eweights,_tweights
+    
+    def normalise(self):
+        for i in range(self.rnum):
+            # Prior
+            self.prior[i] = (self.prior[i]+EPSILON)/(np.sum(self.prior[i])+EPSILON*self.hsize[i])
+            self.prior[i] = np.log2(self.prior[i])
+            # Transition
+            self.tweights[i] = (self.tweights[i]+EPSILON)/(np.sum(self.tweights[i],axis=1)+EPSILON*self.hsize[i])[:,np.newaxis]
+            self.tweights[i] = np.log2(self.tweights[i])
+            # Emission
+            self.eweights[i] = (self.eweights[i]+EPSILON)/(np.sum(self.eweights[i],axis=1)+EPSILON*self.xsize)[:,np.newaxis]
+            self.eweights[i] = np.log2(self.eweights[i])
+
+    def viterbi(self,X):
+        # Viterbi algorithm
+        slen = len(X)
+        path = np.zeros((slen-1,self.combined_act_num),dtype=np.int)
+        #mu_0 = p(o1|a1,a2)p(a1)p(a2)
+        #Since only combined acts are considered
+        mu  = self.eweights[:,X[0]] + self.prior
+        for t in range(1,slen):
+            mu = self.tweights + np.reshape(mu,[self.combined_act_num,1])
+            #print(mu)
+            mx_inds = np.argmax(mu,axis=0)
+            mu = np.transpose(np.amax(mu,axis=0))
+            mu = mu + self.eweights[:,X[t]]
+            path[t-1,:] = mx_inds
+            
+        # Extract
+        max_inx = np.argmax(mu)
+        Y = [-1]*slen
+        Y[-1]=max_inx
+        for t in range(slen-2,-1,-1):
+            max_inx = path[t,max_inx]
+            Y[t] = max_inx
+        return Y
+
+    def run(self):
+        self.estimate_params()
+        valid_acc = 0
+        valid_x,valid_y = self.dataset.valid_dis_sequences()
+        pred = self.viterbi(valid_x)
+        valid_acc = pred_accuracy(pred,valid_y)        
+        return valid_acc
+        
+
+class SHMM_VEC(HMM_VEC):
+    def __init__(self,hsize,xsize,vec_type):
+        self.xsize = xsize
+        self.hsize = hsize
+        self.tweights = np.zeros((self.hsize,self.hsize),dtype=np.float)
+        self.eweights = np.zeros((self.hsize,self.xsize,2),dtype=np.float)
+    def add_transition_obs(self,j_,j):
+        self.tweights[j_,j] += 1
+        
+    def add_emission_obs(self,act,sensor_vec):
+        self.eweights[act,range(self.xsize),sensor_vec] += 1
+        
+        
+    def set_prior(self,prior):
+        self.prior = prior;
+        
+class PHMM_VEC(object):
+    def __init__(self,dataset):
+        self.vec_type = 1
+        self.set_vec_type()
+        self.dataset = dataset
+        self.hsize = dataset.total_separate_acts()
+        self.xsize = dataset.sensor_num()
+
+        self.hmms = [SHMM_VEC(self.hsize,self.xsize,self.vec_type),SHMM_VEC(self.hsize,self.xsize,self.vec_type)] 
+
+    def set_vec_type(self):
+        pass
+    
+    def estimate_params(self):
+        hmm_num = len(self.hmms);
+        while True:
+            prev_act,curr_act,sensor = self.dataset.next()
+            # Update transaction probability table
+            # tweights[j',j] = p^k(j|j')
+            if curr_act is None:
+                break
+            elif prev_act is not None:
+                 for k in range(hmm_num):
+                    self.hmms[k].add_transition_obs(prev_act[k],curr_act[k])            
+            # Update emission probability table
+            if sensor is not None:
+                sensor = self.dataset.sensor_vec(sensor,self.vec_type)
+                for k in range(hmm_num):
+                    self.hmms[k].add_emission_obs(curr_act[k],sensor)
+    
+        #priors: act_num x num_residents
+        priors = self.dataset.get_prior('else')
+        for k in range(hmm_num):
+            self.hmms[k].set_prior(priors[:,k])
+        #Laplace smoothing and normalise
+        for k in range(hmm_num):
+            self.hmms[k].normalise()
+          
+            
+    def viterbi(self,X):
+        # Viterbi algorithm
+        # Input:  X - a sequence of events
+        # Output: Y - len x r_num: activities of residents
+        hmm_num = len(self.hmms)
+        seq_len = len(X)
+        Y = [[0]*hmm_num]*seq_len
+        for k in range(hmm_num):
+            y_ = self.hmms[k].viterbi(X)
+            for i in range(seq_len):
+                Y[i][k] = y_[i]
+        return Y
+
+    def run(self):
+        self.estimate_params()
+        valid_acc = 0
+        valid_x,valid_y = self.dataset.valid_vec_sequences(self.vec_type)
+        pred = self.viterbi(valid_x)
+        valid_acc = pred_accuracy(pred,valid_y)        
+        return valid_acc
+    
+class PHMM_VEC1(PHMM_VEC):
+    def set_vec_type(self):
+        self.vec_type = 1
+
+class PHMM_VEC2(PHMM_VEC):
+    def set_vec_type(self):
+        self.vec_type = 2
+        
+class PHMM_VEC3(PHMM_VEC):
+    def set_vec_type(self):
+        self.vec_type = 3
+

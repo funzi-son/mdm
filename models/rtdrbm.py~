@@ -1,0 +1,23 @@
+"""
+The Recurrent Temporal Discriminative RBMs for sequence multilabelling
+Son N. Tran
+sontn.fz@gmail.com
+"""
+import numpy as np
+import tensorflow as tf
+
+class RTDRBM(object):
+    def __init__(self,dataset):
+        self.dataset = dataset
+        
+    def build_model(self):
+        with tf.variable_scope('rtdrbm') as scope:
+            U
+            W
+            W_
+
+            
+        
+
+    def run():
+        

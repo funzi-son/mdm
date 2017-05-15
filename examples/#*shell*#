@@ -1,0 +1,961 @@
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ls
+~                    crfsuite_test.sh~         mixhmm_da_run.py       rnn_run.py~
+casas.crfsuite       delete_files.py           mixhmm_da_run.py~      rnn_run.sh
+checkpoint           delete_files.py~          mixhmm_da_run.sh       rnn_run.sh~
+crf_mat.m~           hmm_run_model_select.py~  mixhmm_da_run.sh~      running.ckpt.data-00000-of-00001
+crf_pos_example.py   hmm_run_old.py            mixhmm_run.py          running.ckpt.index
+crf_pos_example.py~  hmm_run.py                mixhmm_run.py~         running.ckpt.meta
+crf_run.py           hmm_run.py~               mixhmm_run.sh          run.py
+crf_run.py~          hmm_run.sh                mixhmm_run.sh~         run.py~
+crf_run.sh           hmm_run.sh~               pos_data_analysis.py~  run.sh
+crf_run.sh~          hmm_toy_example.py        result_analysis.py     run.sh~
+crfsuite_test.py     hmm_toy_example.py~       result_analysis.py~    test_mullet.java~
+crfsuite_test.py~    hmm_toy_example.sh        result_analysis.sh
+#crfsuite_test.sh#   hmm_toy_example.sh~       result_analysis.sh~
+crfsuite_test.sh     __init__.py               rnn_run.py
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ rm *~
+rm: cannot remove '~': Is a directory
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ls
+~                   crfsuite_test.sh    mixhmm_da_run.py    running.ckpt.data-00000-of-00001
+casas.crfsuite      delete_files.py     mixhmm_da_run.sh    running.ckpt.index
+checkpoint          hmm_run_old.py      mixhmm_run.py       running.ckpt.meta
+crf_pos_example.py  hmm_run.py          mixhmm_run.sh       run.py
+crf_run.py          hmm_run.sh          result_analysis.py  run.sh
+crf_run.sh          hmm_toy_example.py  result_analysis.sh
+crfsuite_test.py    hmm_toy_example.sh  rnn_run.py
+#crfsuite_test.sh#  __init__.py         rnn_run.sh
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ rm crf*
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ls
+~                   hmm_run.py          mixhmm_da_run.sh    rnn_run.sh
+casas.crfsuite      hmm_run.sh          mixhmm_run.py       running.ckpt.data-00000-of-00001
+checkpoint          hmm_toy_example.py  mixhmm_run.sh       running.ckpt.index
+#crfsuite_test.sh#  hmm_toy_example.sh  result_analysis.py  running.ckpt.meta
+delete_files.py     __init__.py         result_analysis.sh  run.py
+hmm_run_old.py      mixhmm_da_run.py    rnn_run.py          run.sh
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ rm *crfsuite*
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ls
+~                hmm_run.sh          mixhmm_da_run.sh    rnn_run.py                        run.py
+checkpoint       hmm_toy_example.py  mixhmm_run.py       rnn_run.sh                        run.sh
+delete_files.py  hmm_toy_example.sh  mixhmm_run.sh       running.ckpt.data-00000-of-00001
+hmm_run_old.py   __init__.py         result_analysis.py  running.ckpt.index
+hmm_run.py       mixhmm_da_run.py    result_analysis.sh  running.ckpt.meta
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ rm checkpoint 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ls
+~                hmm_toy_example.py  mixhmm_run.py       rnn_run.sh                        run.sh
+delete_files.py  hmm_toy_example.sh  mixhmm_run.sh       running.ckpt.data-00000-of-00001
+hmm_run_old.py   __init__.py         result_analysis.py  running.ckpt.index
+hmm_run.py       mixhmm_da_run.py    result_analysis.sh  running.ckpt.meta
+hmm_run.sh       mixhmm_da_run.sh    rnn_run.py          run.py
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ rm delete_files.py 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ls
+~                   hmm_toy_example.sh  mixhmm_run.sh       running.ckpt.data-00000-of-00001
+hmm_run_old.py      __init__.py         result_analysis.py  running.ckpt.index
+hmm_run.py          mixhmm_da_run.py    result_analysis.sh  running.ckpt.meta
+hmm_run.sh          mixhmm_da_run.sh    rnn_run.py          run.py
+hmm_toy_example.py  mixhmm_run.py       rnn_run.sh          run.sh
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ rm *.ckpt.*
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ls
+~               hmm_run.sh          __init__.py       mixhmm_run.py       result_analysis.sh  run.py
+hmm_run_old.py  hmm_toy_example.py  mixhmm_da_run.py  mixhmm_run.sh       rnn_run.py          run.sh
+hmm_run.py      hmm_toy_example.sh  mixhmm_da_run.sh  result_analysis.py  rnn_run.shx
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ mv hmm_run.py  run.py
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ls
+~               hmm_toy_example.py  mixhmm_da_run.py  mixhmm_run.sh       rnn_run.py  run.sh
+hmm_run_old.py  hmm_toy_example.sh  mixhmm_da_run.sh  result_analysis.py  rnn_run.sh  run.sh~
+hmm_run.sh      __init__.py         mixhmm_run.py     result_analysis.sh  run.py
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh
+.
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh
+.
+.
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh
+.
+.
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh
+.
+.
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh
+/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples
+.
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh
+/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples
+.
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh
+/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples
+/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 80, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 47, in main
+    if state_id==3 and (data_id==1 or data_id==2):
+NameError: name 'state_id' is not defined
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 80, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 47, in main
+    if state_id==3 and (data_id==1 or data_id==2):
+NameError: name 'state_id' is not defined
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 80, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 47, in main
+    if state_id==3 and (data_id==1 or data_id==2):
+NameError: name 'state_id' is not defined
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ mv hmm_run.py run.py 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Data is not found
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 102, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 61, in main
+    helpf()
+NameError: name 'helpf' is not defined
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Data is not found
+Usage:
+run.sh <model_name> <data_name> <state_type>
+ --- model_name:
+ ---------- hmm     : group-dependency HMMs
+ ---------- xhmm    : grouped-dependency coupled HMMs 
+ ---------- phmm    : parallel HMMs
+ ---------- chmm    : coupled HMMs
+ ---------- fhmm    : factorial HMMs
+ ---------- cd-fhmm : crossed-dependency factorial HMMs
+ ---------- md-hmm  : ensembles of HMMs
+ ---------- mdm     : mixed-dependency model
+ --- data_name:
+ ---------- casas: CASAS
+ ---------- arasa: ARAS House A
+ ---------- arasb: ARAS House B
+ --- state_type:
+ ----------dis
+ ----------vec1
+ ----------vec2:
+ ----------vec3
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Data is not found
+Usage:
+run.sh <model_name> <data_name> <state_type>
+ --- model_name:
+ ---------- hmm     : group-dependency HMMs
+ ---------- xhmm    : grouped-dependency coupled HMMs 
+ ---------- phmm    : parallel HMMs
+ ---------- chmm    : coupled HMMs
+ ---------- fhmm    : factorial HMMs
+ ---------- cd-fhmm : crossed-dependency factorial HMMs
+ ---------- md-hmm  : ensembles of HMMs
+ ---------- mdm     : mixed-dependency model
+ --- data_name:
+ ---------- casas: CASAS
+ ---------- arasa: ARAS House A
+ ---------- arasb: ARAS House B
+ --- state_type: dis , vec1, vec2, vec3
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+hmm
+casas
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 123, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 53, in main
+    print(state_name)
+NameError: name 'state_name' is not defined
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+hmm
+casas
+dis
+  C-c C-cTraceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 123, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 66, in main
+    input("")
+KeyboardInterrupt
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$   C-c C-c
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+hmm
+casas
+dis
+0
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 123, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 70, in main
+    model_id = models.index(model_names)
+NameError: name 'model_names' is not defined
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+0
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 121, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 68, in main
+    model_id = models.index(models)
+ValueError: ['hmm', 'xhmm', 'phmm', 'chmm', 'fhmm', 'cd-fhmm', 'mdm'] is not in list
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+0
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ls
+~               hmm_toy_example.py  mixhmm_da_run.py  mixhmm_run.sh       rnn_run.py  run.py~
+hmm_run_old.py  hmm_toy_example.sh  mixhmm_da_run.sh  result_analysis.py  rnn_run.sh  run.sh
+hmm_run.sh      __init__.py         mixhmm_run.py     result_analysis.sh  run.py      run.sh~
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ cp -r ~/WORK/Data/ARAS aras
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ cp -r ~/WORK/Data/ARAS aras
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ cd casas/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/casas$ ls
+Chinook_3_Bedroom.jpg  P01.txt  P05.txt   P08.txt  P12.txt  P16.txt  P20.txt  P23.txt~  README
+mallet                 P02.txt  P06.txt   P09.txt  P13.txt  P17.txt  P21.txt  P24.txt
+non_temporal           P03.txt  P06.txt~  P10.txt  P14.txt  P18.txt  P22.txt  P25.txt
+note                   P04.txt  P07.txt   P11.txt  P15.txt  P19.txt  P23.txt  P26.txt
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/casas$ rm -r non_temporal/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/casas$ rm -r mallet/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/casas$ ls
+Chinook_3_Bedroom.jpg  P03.txt  P06.txt~  P10.txt  P14.txt  P18.txt  P22.txt   P25.txt
+note                   P04.txt  P07.txt   P11.txt  P15.txt  P19.txt  P23.txt   P26.txt
+P01.txt                P05.txt  P08.txt   P12.txt  P16.txt  P20.txt  P23.txt~  README
+P02.txt                P06.txt  P09.txt   P13.txt  P17.txt  P21.txt  P24.txt
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/casas$ rm note 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/casas$ ls
+Chinook_3_Bedroom.jpg  P04.txt   P07.txt  P11.txt  P15.txt  P19.txt  P23.txt   P26.txt
+P01.txt                P05.txt   P08.txt  P12.txt  P16.txt  P20.txt  P23.txt~  README
+P02.txt                P06.txt   P09.txt  P13.txt  P17.txt  P21.txt  P24.txt
+P03.txt                P06.txt~  P10.txt  P14.txt  P18.txt  P22.txt  P25.txt
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/casas$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ cd aras/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/aras$ ls
+Aras.rar  House_A  House_B
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/aras$ rm -r Aras.rar 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/aras$ cd House_A/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/aras/House_A$ ls
+DAY_10.txt  DAY_14.txt  DAY_18.txt  DAY_21.txt  DAY_25.txt  DAY_29.txt  DAY_4.txt  DAY_8.txt
+DAY_11.txt  DAY_15.txt  DAY_19.txt  DAY_22.txt  DAY_26.txt  DAY_2.txt   DAY_5.txt  DAY_9.txt
+DAY_12.txt  DAY_16.txt  DAY_1.txt   DAY_23.txt  DAY_27.txt  DAY_30.txt  DAY_6.txt  README
+DAY_13.txt  DAY_17.txt  DAY_20.txt  DAY_24.txt  DAY_28.txt  DAY_3.txt   DAY_7.txt
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/aras/House_A$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/aras$ ls
+House_A  House_B
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/aras$ ./run.sh hmm casas dis
+bash: ./run.sh: No such file or directory
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/aras$ ./run.sh hmm casas dis
+bash: ./run.sh: No such file or directory
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/aras$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 25
+    path = {0:."/casas",
+              ^
+SyntaxError: invalid syntax
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+0
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 109, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 68, in main
+    run(model_id,state_id,data_id)
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 80, in run
+    vld_,pred,labs = hmm.run()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/models/hmms.py", line 216, in run
+    self.estimate_params()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/models/hmms.py", line 65, in estimate_params
+    prev_act,curr_act,sensor = self.dataset.next()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/data/casas_adlmr_.py", line 119, in next
+    self.freader = open(file_name,"r")
+FileNotFoundError: [Errno 2] No such file or directory: './casasP02.txt'
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+0
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 109, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 68, in main
+    run(model_id,state_id,data_id)
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 82, in run
+    save_result(pred,labs,result_dir+'/fold'+str(fold))
+NameError: name 'result_dir' is not defined
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+0
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 108, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 68, in main
+    run(model_id,state_id,data_id)
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 87, in run
+    print(rs)
+NameError: name 'rs' is not defined
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+0
+[[ 0.46735905  0.62166172  0.40504451]
+ [ 0.71192893  0.74365482  0.5748731 ]
+ [ 0.64164649  0.68765133  0.5472155 ]
+ [ 0.8         0.8496732   0.75816993]
+ [ 0.8654321   0.81481481  0.76049383]
+ [ 0.84692418  0.77968526  0.70243205]
+ [ 0.89236111  0.85069444  0.8125    ]
+ [ 0.83751651  0.79524439  0.77278732]
+ [ 0.88717949  0.92051282  0.86153846]
+ [ 0.82395382  0.78066378  0.73593074]
+ [ 0.7399679   0.80256822  0.69983949]
+ [ 0.77272727  0.83741259  0.72027972]
+ [ 0.7288961   0.73051948  0.67857143]
+ [ 0.73033708  0.75120385  0.65971108]
+ [ 0.87581699  0.85130719  0.81045752]
+ [ 0.73770492  0.8579235   0.69945355]
+ [ 0.72461538  0.84        0.67230769]
+ [ 0.69370629  0.9034965   0.66993007]
+ [ 0.73333333  0.73809524  0.68730159]
+ [ 0.72759857  0.61290323  0.57885305]
+ [ 0.76        0.762       0.696     ]
+ [ 0.90806452  0.73064516  0.69193548]
+ [ 0.8477306   0.83308931  0.75841874]
+ [ 0.90166415  0.85325265  0.80635401]
+ [ 0.8033419   0.7403599   0.63881748]
+ [ 0.65588915  0.66050808  0.5704388 ]
+ [ 0.77368061  0.78267467  0.69114058]]
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Results of  Model: hmm, Data:casas,State: dis
+       R1     |     R2     |       All   
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 112, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 71, in main
+    for i in range(acc.shape(0)-1):
+TypeError: 'tuple' object is not callable
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Results of  Model: hmm, Data:casas,State: dis
+       R1     |     R2     |       All   
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 112, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 72, in main
+    print("     %.3f     |     %.3f     |       %3f   ",acc[i,1],acc[i,2],acc[i,3])
+IndexError: index 3 is out of bounds for axis 1 with size 3
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Results of  Model: hmm, Data:casas,State: dis
+       R1     |     R2     |       All   
+     %.3f     |     %.3f     |       %.3f    0.467359050445 0.621661721068 0.405044510386
+     %.3f     |     %.3f     |       %.3f    0.71192893401 0.743654822335 0.574873096447
+     %.3f     |     %.3f     |       %.3f    0.641646489104 0.687651331719 0.547215496368
+     %.3f     |     %.3f     |       %.3f    0.8 0.849673202614 0.758169934641
+     %.3f     |     %.3f     |       %.3f    0.865432098765 0.814814814815 0.76049382716
+     %.3f     |     %.3f     |       %.3f    0.846924177396 0.779685264664 0.70243204578
+     %.3f     |     %.3f     |       %.3f    0.892361111111 0.850694444444 0.8125
+     %.3f     |     %.3f     |       %.3f    0.83751651255 0.795244385733 0.772787318362
+     %.3f     |     %.3f     |       %.3f    0.887179487179 0.920512820513 0.861538461538
+     %.3f     |     %.3f     |       %.3f    0.823953823954 0.780663780664 0.735930735931
+     %.3f     |     %.3f     |       %.3f    0.739967897271 0.802568218299 0.699839486356
+     %.3f     |     %.3f     |       %.3f    0.772727272727 0.837412587413 0.72027972028
+     %.3f     |     %.3f     |       %.3f    0.728896103896 0.730519480519 0.678571428571
+     %.3f     |     %.3f     |       %.3f    0.730337078652 0.751203852327 0.659711075441
+     %.3f     |     %.3f     |       %.3f    0.875816993464 0.851307189542 0.81045751634
+     %.3f     |     %.3f     |       %.3f    0.737704918033 0.857923497268 0.699453551913
+     %.3f     |     %.3f     |       %.3f    0.724615384615 0.84 0.672307692308
+     %.3f     |     %.3f     |       %.3f    0.693706293706 0.903496503497 0.66993006993
+     %.3f     |     %.3f     |       %.3f    0.733333333333 0.738095238095 0.687301587302
+     %.3f     |     %.3f     |       %.3f    0.727598566308 0.612903225806 0.578853046595
+     %.3f     |     %.3f     |       %.3f    0.76 0.762 0.696
+     %.3f     |     %.3f     |       %.3f    0.908064516129 0.73064516129 0.691935483871
+     %.3f     |     %.3f     |       %.3f    0.847730600293 0.833089311859 0.758418740849
+     %.3f     |     %.3f     |       %.3f    0.901664145234 0.853252647504 0.806354009077
+     %.3f     |     %.3f     |       %.3f    0.803341902314 0.740359897172 0.63881748072
+     %.3f     |     %.3f     |       %.3f    0.655889145497 0.660508083141 0.570438799076
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Results of  Model: hmm, Data:casas,State: dis
+       R1     |     R2     |       All   
+     0.467     |     0.622     |       0.405   
+     0.712     |     0.744     |       0.575   
+     0.642     |     0.688     |       0.547   
+     0.800     |     0.850     |       0.758   
+     0.865     |     0.815     |       0.760   
+     0.847     |     0.780     |       0.702   
+     0.892     |     0.851     |       0.812   
+     0.838     |     0.795     |       0.773   
+     0.887     |     0.921     |       0.862   
+     0.824     |     0.781     |       0.736   
+     0.740     |     0.803     |       0.700   
+     0.773     |     0.837     |       0.720   
+     0.729     |     0.731     |       0.679   
+     0.730     |     0.751     |       0.660   
+     0.876     |     0.851     |       0.810   
+     0.738     |     0.858     |       0.699   
+     0.725     |     0.840     |       0.672   
+     0.694     |     0.903     |       0.670   
+     0.733     |     0.738     |       0.687   
+     0.728     |     0.613     |       0.579   
+     0.760     |     0.762     |       0.696   
+     0.908     |     0.731     |       0.692   
+     0.848     |     0.833     |       0.758   
+     0.902     |     0.853     |       0.806   
+     0.803     |     0.740     |       0.639   
+     0.656     |     0.661     |       0.570   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Results of  Model: hmm, Data:casas,State: dis
+       R1     |     R2     |       All   
+     46.736     |     62.166     |       40.504   
+     71.193     |     74.365     |       57.487   
+     64.165     |     68.765     |       54.722   
+     80.000     |     84.967     |       75.817   
+     86.543     |     81.481     |       76.049   
+     84.692     |     77.969     |       70.243   
+     89.236     |     85.069     |       81.250   
+     83.752     |     79.524     |       77.279   
+     88.718     |     92.051     |       86.154   
+     82.395     |     78.066     |       73.593   
+     73.997     |     80.257     |       69.984   
+     77.273     |     83.741     |       72.028   
+     72.890     |     73.052     |       67.857   
+     73.034     |     75.120     |       65.971   
+     87.582     |     85.131     |       81.046   
+     73.770     |     85.792     |       69.945   
+     72.462     |     84.000     |       67.231   
+     69.371     |     90.350     |       66.993   
+     73.333     |     73.810     |       68.730   
+     72.760     |     61.290     |       57.885   
+     76.000     |     76.200     |       69.600   
+     90.806     |     73.065     |       69.194   
+     84.773     |     83.309     |       75.842   
+     90.166     |     85.325     |       80.635   
+     80.334     |     74.036     |       63.882   
+     65.589     |     66.051     |       57.044   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Results of  Model: hmm, Data:casas,State: dis
+     R1     |     R2     |       All   
+   46.736   |     62.166     |       40.504   
+   71.193   |     74.365     |       57.487   
+   64.165   |     68.765     |       54.722   
+   80.000   |     84.967     |       75.817   
+   86.543   |     81.481     |       76.049   
+   84.692   |     77.969     |       70.243   
+   89.236   |     85.069     |       81.250   
+   83.752   |     79.524     |       77.279   
+   88.718   |     92.051     |       86.154   
+   82.395   |     78.066     |       73.593   
+   73.997   |     80.257     |       69.984   
+   77.273   |     83.741     |       72.028   
+   72.890   |     73.052     |       67.857   
+   73.034   |     75.120     |       65.971   
+   87.582   |     85.131     |       81.046   
+   73.770   |     85.792     |       69.945   
+   72.462   |     84.000     |       67.231   
+   69.371   |     90.350     |       66.993   
+   73.333   |     73.810     |       68.730   
+   72.760   |     61.290     |       57.885   
+   76.000   |     76.200     |       69.600   
+   90.806   |     73.065     |       69.194   
+   84.773   |     83.309     |       75.842   
+   90.166   |     85.325     |       80.635   
+   80.334   |     74.036     |       63.882   
+   65.589   |     66.051     |       57.044   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Results of  Model: hmm, Data:casas,State: dis
+     R1     |     R2     |    All   
+   46.736   |   62.166   |   40.504   
+   71.193   |   74.365   |   57.487   
+   64.165   |   68.765   |   54.722   
+   80.000   |   84.967   |   75.817   
+   86.543   |   81.481   |   76.049   
+   84.692   |   77.969   |   70.243   
+   89.236   |   85.069   |   81.250   
+   83.752   |   79.524   |   77.279   
+   88.718   |   92.051   |   86.154   
+   82.395   |   78.066   |   73.593   
+   73.997   |   80.257   |   69.984   
+   77.273   |   83.741   |   72.028   
+   72.890   |   73.052   |   67.857   
+   73.034   |   75.120   |   65.971   
+   87.582   |   85.131   |   81.046   
+   73.770   |   85.792   |   69.945   
+   72.462   |   84.000   |   67.231   
+   69.371   |   90.350   |   66.993   
+   73.333   |   73.810   |   68.730   
+   72.760   |   61.290   |   57.885   
+   76.000   |   76.200   |   69.600   
+   90.806   |   73.065   |   69.194   
+   84.773   |   83.309   |   75.842   
+   90.166   |   85.325   |   80.635   
+   80.334   |   74.036   |   63.882   
+   65.589   |   66.051   |   57.044   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Results of  Model: hmm, Data:casas,State: dis
+          R1     |     R2     |    All   
+Day  1   46.736   |   62.166   |   40.504   
+Day  2   71.193   |   74.365   |   57.487   
+Day  3   64.165   |   68.765   |   54.722   
+Day  4   80.000   |   84.967   |   75.817   
+Day  5   86.543   |   81.481   |   76.049   
+Day  6   84.692   |   77.969   |   70.243   
+Day  7   89.236   |   85.069   |   81.250   
+Day  8   83.752   |   79.524   |   77.279   
+Day  9   88.718   |   92.051   |   86.154   
+Day 10   82.395   |   78.066   |   73.593   
+Day 11   73.997   |   80.257   |   69.984   
+Day 12   77.273   |   83.741   |   72.028   
+Day 13   72.890   |   73.052   |   67.857   
+Day 14   73.034   |   75.120   |   65.971   
+Day 15   87.582   |   85.131   |   81.046   
+Day 16   73.770   |   85.792   |   69.945   
+Day 17   72.462   |   84.000   |   67.231   
+Day 18   69.371   |   90.350   |   66.993   
+Day 19   73.333   |   73.810   |   68.730   
+Day 20   72.760   |   61.290   |   57.885   
+Day 21   76.000   |   76.200   |   69.600   
+Day 22   90.806   |   73.065   |   69.194   
+Day 23   84.773   |   83.309   |   75.842   
+Day 24   90.166   |   85.325   |   80.635   
+Day 25   80.334   |   74.036   |   63.882   
+Day 26   65.589   |   66.051   |   57.044   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+Results of  Model: hmm, Data:casas,State: dis
+          R1     |     R2     |    All   
+Day  1   46.736   |   62.166   |   40.504   
+Day  2   71.193   |   74.365   |   57.487   
+Day  3   64.165   |   68.765   |   54.722   
+Day  4   80.000   |   84.967   |   75.817   
+Day  5   86.543   |   81.481   |   76.049   
+Day  6   84.692   |   77.969   |   70.243   
+Day  7   89.236   |   85.069   |   81.250   
+Day  8   83.752   |   79.524   |   77.279   
+Day  9   88.718   |   92.051   |   86.154   
+Day 10   82.395   |   78.066   |   73.593   
+Day 11   73.997   |   80.257   |   69.984   
+Day 12   77.273   |   83.741   |   72.028   
+Day 13   72.890   |   73.052   |   67.857   
+Day 14   73.034   |   75.120   |   65.971   
+Day 15   87.582   |   85.131   |   81.046   
+Day 16   73.770   |   85.792   |   69.945   
+Day 17   72.462   |   84.000   |   67.231   
+Day 18   69.371   |   90.350   |   66.993   
+Day 19   73.333   |   73.810   |   68.730   
+Day 20   72.760   |   61.290   |   57.885   
+Day 21   76.000   |   76.200   |   69.600   
+Day 22   90.806   |   73.065   |   69.194   
+Day 23   84.773   |   83.309   |   75.842   
+Day 24   90.166   |   85.325   |   80.635   
+Day 25   80.334   |   74.036   |   63.882   
+Day 26   65.589   |   66.051   |   57.044   
+==========================================
+ Average    77.368   |   78.267   |   69.114   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh md-hmm casas dis
+Results of  Model: hmm, Data:casas,State: dis
+          R1     |     R2     |    All   
+Day  1   46.736   |   62.166   |   40.504   
+Day  2   71.193   |   74.365   |   57.487   
+Day  3   64.165   |   68.765   |   54.722   
+Day  4   80.000   |   84.967   |   75.817   
+Day  5   86.543   |   81.481   |   76.049   
+Day  6   84.692   |   77.969   |   70.243   
+Day  7   89.236   |   85.069   |   81.250   
+Day  8   83.752   |   79.524   |   77.279   
+Day  9   88.718   |   92.051   |   86.154   
+Day 10   82.395   |   78.066   |   73.593   
+Day 11   73.997   |   80.257   |   69.984   
+Day 12   77.273   |   83.741   |   72.028   
+Day 13   72.890   |   73.052   |   67.857   
+Day 14   73.034   |   75.120   |   65.971   
+Day 15   87.582   |   85.131   |   81.046   
+Day 16   73.770   |   85.792   |   69.945   
+Day 17   72.462   |   84.000   |   67.231   
+Day 18   69.371   |   90.350   |   66.993   
+Day 19   73.333   |   73.810   |   68.730   
+Day 20   72.760   |   61.290   |   57.885   
+Day 21   76.000   |   76.200   |   69.600   
+Day 22   90.806   |   73.065   |   69.194   
+Day 23   84.773   |   83.309   |   75.842   
+Day 24   90.166   |   85.325   |   80.635   
+Day 25   80.334   |   74.036   |   63.882   
+Day 26   65.589   |   66.051   |   57.044   
+==========================================
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+Average  77.368   |   78.267   |   69.114   
+  C-c C-c
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$   C-c C-c
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh md-hmm casas dis
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 125, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 74, in main
+    acc = run(model_id,state_id,data_id,alpha,beta,gamma)*100
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 97, in run
+    vld_,pred,labs = hmm.run()
+NameError: name 'hmm' is not defined
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh md-hmm casas dis
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 126, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 74, in main
+    acc = run(model_id,state_id,data_id,alpha,beta,gamma)*100
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 98, in run
+    vld_,pred,labs = model.run()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/models/mdm.py", line 217, in run
+    self.estimate_params()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/models/mdm.py", line 61, in estimate_params
+    _spr_tweights.append(np.zeros((self.cmb_act_num,self.spr_actx_num[r]),dtype=float))
+AttributeError: 'MDM' object has no attribute 'spr_actx_num'
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh md-hmm casas dis
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+Results of  Model: md-hmm, Data:casas,State: dis
+          R1     |     R2     |    All   
+Day  1   46.736   |   62.166   |   40.504   
+Day  2   71.193   |   74.365   |   57.487   
+Day  3   64.165   |   68.765   |   54.722   
+Day  4   80.000   |   84.967   |   75.817   
+Day  5   86.543   |   81.481   |   76.049   
+Day  6   84.692   |   77.969   |   70.243   
+Day  7   89.236   |   85.069   |   81.250   
+Day  8   83.752   |   79.524   |   77.279   
+Day  9   88.718   |   92.051   |   86.154   
+Day 10   82.395   |   78.066   |   73.593   
+Day 11   73.997   |   80.257   |   69.984   
+Day 12   77.273   |   83.741   |   72.028   
+Day 13   72.890   |   73.052   |   67.857   
+Day 14   73.034   |   75.120   |   65.971   
+Day 15   87.582   |   85.131   |   81.046   
+Day 16   73.770   |   85.792   |   69.945   
+Day 17   72.462   |   84.000   |   67.231   
+Day 18   69.371   |   90.350   |   66.993   
+Day 19   73.333   |   73.810   |   68.730   
+Day 20   72.760   |   61.290   |   57.885   
+Day 21   76.000   |   76.200   |   69.600   
+Day 22   90.806   |   73.065   |   69.194   
+Day 23   84.773   |   83.309   |   75.842   
+Day 24   90.166   |   85.325   |   80.635   
+Day 25   80.334   |   74.036   |   63.882   
+Day 26   65.589   |   66.051   |   57.044   
+==========================================
+Average  77.368   |   78.267   |   69.114   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh hmm casas dis
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+[ 0.  0.  1.]
+Results of  Model: md-hmm, Data:casas,State: dis
+          R1     |     R2     |    All   
+Day  1   46.736   |   62.166   |   40.504   
+Day  2   71.193   |   74.365   |   57.487   
+Day  3   64.165   |   68.765   |   54.722   
+Day  4   80.000   |   84.967   |   75.817   
+Day  5   86.543   |   81.481   |   76.049   
+Day  6   84.692   |   77.969   |   70.243   
+Day  7   89.236   |   85.069   |   81.250   
+Day  8   83.752   |   79.524   |   77.279   
+Day  9   88.718   |   92.051   |   86.154   
+Day 10   82.395   |   78.066   |   73.593   
+Day 11   73.997   |   80.257   |   69.984   
+Day 12   77.273   |   83.741   |   72.028   
+Day 13   72.890   |   73.052   |   67.857   
+Day 14   73.034   |   75.120   |   65.971   
+Day 15   87.582   |   85.131   |   81.046   
+Day 16   73.770   |   85.792   |   69.945   
+Day 17   72.462   |   84.000   |   67.231   
+Day 18   69.371   |   90.350   |   66.993   
+Day 19   73.333   |   73.810   |   68.730   
+Day 20   72.760   |   61.290   |   57.885   
+Day 21   76.000   |   76.200   |   69.600   
+Day 22   90.806   |   73.065   |   69.194   
+Day 23   84.773   |   83.309   |   75.842   
+Day 24   90.166   |   85.325   |   80.635   
+Day 25   80.334   |   74.036   |   63.882   
+Day 26   65.589   |   66.051   |   57.044   
+==========================================
+Average  77.368   |   78.267   |   69.114   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh pmm casas dis
+Results of  Model: hmm, Data:casas,State: dis
+          R1     |     R2     |    All   
+Day  1   46.736   |   62.166   |   40.504   
+Day  2   71.193   |   74.365   |   57.487   
+Day  3   64.165   |   68.765   |   54.722   
+Day  4   80.000   |   84.967   |   75.817   
+Day  5   86.543   |   81.481   |   76.049   
+Day  6   84.692   |   77.969   |   70.243   
+Day  7   89.236   |   85.069   |   81.250   
+Day  8   83.752   |   79.524   |   77.279   
+Day  9   88.718   |   92.051   |   86.154   
+Day 10   82.395   |   78.066   |   73.593   
+Day 11   73.997   |   80.257   |   69.984   
+Day 12   77.273   |   83.741   |   72.028   
+Day 13   72.890   |   73.052   |   67.857   
+Day 14   73.034   |   75.120   |   65.971   
+Day 15   87.582   |   85.131   |   81.046   
+Day 16   73.770   |   85.792   |   69.945   
+Day 17   72.462   |   84.000   |   67.231   
+Day 18   69.371   |   90.350   |   66.993   
+Day 19   73.333   |   73.810   |   68.730   
+Day 20   72.760   |   61.290   |   57.885   
+Day 21   76.000   |   76.200   |   69.600   
+Day 22   90.806   |   73.065   |   69.194   
+Day 23   84.773   |   83.309   |   75.842   
+Day 24   90.166   |   85.325   |   80.635   
+Day 25   80.334   |   74.036   |   63.882   
+Day 26   65.589   |   66.051   |   57.044   
+==========================================
+Average  77.368   |   78.267   |   69.114   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh phmm casas dis
+Model is not found
+Usage:
+run.sh <model_name> <data_name> <state_type>
+ --- model_name:
+ ---------- hmm     : group-dependency HMMs
+ ---------- xhmm    : grouped-dependency coupled HMMs 
+ ---------- phmm    : parallel HMMs
+ ---------- chmm    : coupled HMMs
+ ---------- fhmm    : factorial HMMs
+ ---------- cd-fhmm : crossed-dependency factorial HMMs
+ ---------- md-hmm  : ensembles of HMMs
+ ---------- mdm     : mixed-dependency model
+ --- data_name:
+ ---------- casas: CASAS
+ ---------- arasa: ARAS House A
+ ---------- arasb: ARAS House B
+ --- state_type: dis , vec1, vec2, vec3
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh md-hmm casas dis
+Results of  Model: phmm, Data:casas,State: dis
+          R1     |     R2     |    All   
+Day  1   37.389   |   50.000   |   24.926   
+Day  2   48.223   |   54.315   |   32.107   
+Day  3   50.121   |   60.048   |   35.109   
+Day  4   61.699   |   61.176   |   47.974   
+Day  5   59.383   |   52.716   |   37.037   
+Day  6   50.358   |   51.502   |   35.193   
+Day  7   51.562   |   65.625   |   44.271   
+Day  8   65.522   |   61.427   |   52.708   
+Day  9   53.846   |   57.179   |   40.769   
+Day 10   56.710   |   48.052   |   31.602   
+Day 11   44.302   |   49.278   |   30.337   
+Day 12   45.979   |   43.357   |   28.671   
+Day 13   47.727   |   48.539   |   34.903   
+Day 14   47.673   |   54.254   |   34.671   
+Day 15   61.438   |   62.418   |   45.098   
+Day 16   50.273   |   44.080   |   33.880   
+Day 17   47.692   |   61.231   |   37.385   
+Day 18   43.636   |   49.510   |   30.490   
+Day 19   45.714   |   37.937   |   23.651   
+Day 20   59.319   |   39.606   |   32.975   
+Day 21   42.000   |   47.400   |   29.400   
+Day 22   62.419   |   38.710   |   26.452   
+Day 23   38.360   |   36.603   |   20.059   
+Day 24   62.935   |   53.253   |   43.268   
+Day 25   49.229   |   37.789   |   23.265   
+Day 26   51.270   |   40.300   |   25.173   
+==========================================
+Average  51.338   |   50.242   |   33.899   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh md-hmm casas dis
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 12, in <module>
+    from models.mdm import MDM
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/models/mdm.py", line 102
+    x        _spr_tweights_count = _spr_tweights
+                               ^
+SyntaxError: invalid syntax
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh md-hmm casas dis
+Results of  Model: md-hmm, Data:casas,State: dis
+          R1     |     R2     |    All   
+Day  1   31.602   |   35.312   |   17.062   
+Day  2   46.320   |   41.371   |   30.711   
+Day  3   50.242   |   37.046   |   26.877   
+Day  4   41.830   |   32.418   |   22.745   
+Day  5   49.877   |   47.778   |   32.840   
+Day  6   42.060   |   39.199   |   27.468   
+Day  7   44.965   |   35.590   |   25.868   
+Day  8   43.593   |   34.346   |   24.306   
+Day  9   46.154   |   38.462   |   23.590   
+Day 10   48.773   |   39.250   |   27.850   
+Day 11   46.870   |   46.709   |   33.547   
+Day 12   36.364   |   36.189   |   19.231   
+Day 13   40.422   |   41.071   |   26.461   
+Day 14   36.597   |   40.449   |   25.843   
+Day 15   50.000   |   43.627   |   31.699   
+Day 16   42.077   |   36.430   |   28.962   
+Day 17   36.923   |   43.846   |   22.769   
+Day 18   42.657   |   36.224   |   27.133   
+Day 19   42.540   |   33.333   |   19.365   
+Day 20   51.971   |   36.738   |   25.806   
+Day 21   35.200   |   32.800   |   21.400   
+Day 22   47.581   |   40.806   |   28.226   
+Day 23   42.167   |   50.073   |   27.818   
+Day 24   38.578   |   35.401   |   24.811   
+Day 25   41.003   |   36.761   |   22.622   
+Day 26   52.771   |   35.797   |   25.289   
+==========================================
+Average  43.428   |   38.732   |   25.781   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh md-hmm casas dis
+Results of  Model: md-hmm, Data:casas,State: dis
+          R1     |     R2     |    All   
+Day  1   31.602   |   35.312   |   17.062   
+Day  2   46.320   |   41.371   |   30.711   
+Day  3   50.242   |   37.046   |   26.877   
+Day  4   41.830   |   32.418   |   22.745   
+Day  5   49.877   |   47.778   |   32.840   
+Day  6   42.060   |   39.199   |   27.468   
+Day  7   44.965   |   35.590   |   25.868   
+Day  8   43.593   |   34.346   |   24.306   
+Day  9   46.154   |   38.462   |   23.590   
+Day 10   48.773   |   39.250   |   27.850   
+Day 11   46.870   |   46.709   |   33.547   
+Day 12   36.364   |   36.189   |   19.231   
+Day 13   40.422   |   41.071   |   26.461   
+Day 14   36.597   |   40.449   |   25.843   
+Day 15   50.000   |   43.627   |   31.699   
+Day 16   42.077   |   36.430   |   28.962   
+Day 17   36.923   |   43.846   |   22.769   
+Day 18   42.657   |   36.224   |   27.133   
+Day 19   42.540   |   33.333   |   19.365   
+Day 20   51.971   |   36.738   |   25.806   
+Day 21   35.200   |   32.800   |   21.400   
+Day 22   47.581   |   40.806   |   28.226   
+Day 23   42.167   |   50.073   |   27.818   
+Day 24   38.578   |   35.401   |   24.811   
+Day 25   41.003   |   36.761   |   22.622   
+Day 26   52.771   |   35.797   |   25.289   
+==========================================
+Average  43.428   |   38.732   |   25.781   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh phmm casas dis
+Results of  Model: md-hmm, Data:casas,State: dis
+          R1     |     R2     |    All   
+Day  1   36.202   |   60.089   |   27.151   
+Day  2   52.284   |   56.980   |   37.310   
+Day  3   53.753   |   64.770   |   45.763   
+Day  4   66.536   |   72.941   |   63.268   
+Day  5   60.123   |   59.630   |   48.642   
+Day  6   71.388   |   70.386   |   59.371   
+Day  7   44.444   |   57.292   |   42.188   
+Day  8   62.483   |   62.748   |   53.897   
+Day  9   70.256   |   72.051   |   66.667   
+Day 10   60.606   |   56.277   |   50.072   
+Day 11   53.933   |   64.526   |   49.438   
+Day 12   74.476   |   73.951   |   59.441   
+Day 13   43.831   |   45.130   |   32.305   
+Day 14   61.637   |   62.600   |   46.870   
+Day 15   70.425   |   67.157   |   56.373   
+Day 16   63.570   |   77.596   |   59.381   
+Day 17   52.615   |   63.692   |   46.000   
+Day 18   58.462   |   58.881   |   51.189   
+Day 19   41.111   |   40.952   |   28.730   
+Day 20   51.613   |   50.896   |   34.588   
+Day 21   52.200   |   56.000   |   42.000   
+Day 22   70.323   |   59.355   |   50.484   
+Day 23   63.250   |   60.615   |   46.706   
+Day 24   65.507   |   65.507   |   56.732   
+Day 25   48.458   |   44.730   |   32.648   
+Day 26   56.928   |   50.000   |   42.956   
+==========================================
+Average  57.939   |   60.567   |   47.314   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh mdm casas dis
+Results of  Model: phmm, Data:casas,State: dis
+          R1     |     R2     |    All   
+Day  1   37.389   |   50.000   |   24.926   
+Day  2   48.223   |   54.315   |   32.107   
+Day  3   50.121   |   60.048   |   35.109   
+Day  4   61.699   |   61.176   |   47.974   
+Day  5   59.383   |   52.716   |   37.037   
+Day  6   50.358   |   51.502   |   35.193   
+Day  7   51.562   |   65.625   |   44.271   
+Day  8   65.522   |   61.427   |   52.708   
+Day  9   53.846   |   57.179   |   40.769   
+Day 10   56.710   |   48.052   |   31.602   
+Day 11   44.302   |   49.278   |   30.337   
+Day 12   45.979   |   43.357   |   28.671   
+Day 13   47.727   |   48.539   |   34.903   
+Day 14   47.673   |   54.254   |   34.671   
+Day 15   61.438   |   62.418   |   45.098   
+Day 16   50.273   |   44.080   |   33.880   
+Day 17   47.692   |   61.231   |   37.385   
+Day 18   43.636   |   49.510   |   30.490   
+Day 19   45.714   |   37.937   |   23.651   
+Day 20   59.319   |   39.606   |   32.975   
+Day 21   42.000   |   47.400   |   29.400   
+Day 22   62.419   |   38.710   |   26.452   
+Day 23   38.360   |   36.603   |   20.059   
+Day 24   62.935   |   53.253   |   43.268   
+Day 25   49.229   |   37.789   |   23.265   
+Day 26   51.270   |   40.300   |   25.173   
+==========================================
+Average  51.338   |   50.242   |   33.899   
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh mdm casas dis
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 67, in main
+    alpha = int(sys.argv[4])
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 132, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 70, in main
+    except valueError:
+NameError: name 'valueError' is not defined
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh mdm casas dis
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 132, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 67, in main
+    alpha = int(sys.argv[4])
+IndexError: list index out of range
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh mdm casas dis
+Traceback (most recent call last):
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 132, in <module>
+    main()
+  File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 67, in main
+    alpha = int(sys.argv[4])
+IndexError: list index out of range
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 

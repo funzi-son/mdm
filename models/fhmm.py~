@@ -1,0 +1,119 @@
+"""
+Hidden Markov Model
+Son N. Tran
+"""
+
+import numpy as np
+import math
+
+EPSILON = 0.0000000001
+
+class FHMM_DIS(object):
+    ## Factorial Hidden Markov Model with observation as a single discrete variable
+    ## With 
+    def __init__(self,dataset):
+        self.dataset = dataset
+        self.hsize = dataset.total_activities()
+        self.xsize = dataset.total_sensor_values()
+         
+    def estimate_params(self):
+        self.tweights = np.zeros((2,self.hsize,self.hsize),dtype=np.float)
+        self.eweights = np.zeros((self.hsize,self.hsize,self.xsize),dtype=np.float)
+        
+        while True:
+            trans,emits = self.dataset.next()
+            # Update transaction probability table
+            # tweights[k,j,j'] = p^k(j|j')
+            if trans is not None:
+                for k in range(2):
+                    self.tweights[k,trans[0][k],trans[1][k]] += 1
+            # Update emission probability table
+            if emits is not None:
+                self.eweights[emits[1],emits[2],emits[0]] +=1
+
+            if trans == None and emits == None:
+                break
+        self.prior = self.dataset.get_prior()
+        # Normalise
+        self.prior = self.prior/np.sum(self.prior,axis=0)
+        
+        #print(self.eweights.shape)
+        self.eweights += EPSILON
+        self.eweights = self.eweights/np.sum(self.eweights,axis=2)[:,:,np.newaxis]
+        #print(self.tweights.shape)
+        self.tweights += EPSILON
+        self.tweights = self.tweights/np.sum(self.tweights,axis=2)[:,:,np.newaxis]
+
+        K = self.hsize*self.hsize
+        self.trans = np.zeros((K,K),dtype=np.float)
+        print(self.tweights.shape)
+        for k1 in range(self.hsize):
+            for k2 in range(self.hsize):
+                acts = np.outer(self.tweights[0,k1,:],self.tweights[1,k2,:])
+                self.trans[inds2vecinx(k1,k2,self.hsize),:] = np.reshape(acts,[1,K])
+
+            
+    def viterbi(self,X):
+        slen = len(X)
+        K = self.hsize*self.hsize
+        path = np.zeros((K,slen-1),dtype=np.int)
+        
+        #mu_0 = p(o1|a1,a2)p(a1)p(a2)
+        priors = np.outer(self.prior[:,0],self.prior[:,1])
+        mu  =  np.reshape(np.multiply(self.eweights[:,:,X[0]],priors),[1,K])
+        for t in range(1,slen):
+            mu = self.trans*mu
+            mx_inds = np.argmax(mu,axis=1)
+            o_given_as = np.reshape(self.eweights[:,:,X[t]],[1,K])
+            mu = np.transpose(np.amax(mu,axis=1))
+            mu = np.multiply(mu,o_given_as) 
+            path[:,t-1] = mx_inds
+            
+        # Extract
+        max_inx = np.argmax(mu)
+        Y = [vecinx2inds(max_inx,self.hsize)]
+        for t in range(slen-2,-1,-1):
+            max_inx = path[max_inx,t]
+            Y.append(vecinx2inds(max_inx,self.hsize))
+
+        return Y
+
+    def run(self):
+        self.estimate_params()
+        valid_acc = 0
+        valid_x,valid_y = self.dataset.valid_sequences()
+        pred = self.viterbi(valid_x)
+        print(len(valid_x))
+        valid_acc = pred_accuracy(pred,valid_y)        
+        return valid_acc
+        
+
+class FHMM_VEC(object):
+
+    def __init__(self):
+        print("TODO")
+
+
+
+        
+def vecinx2inds(inx,col):
+    return [math.floor(inx/col),inx%col]
+
+def inds2vecinx(x,y,col):
+    return x*col + y
+
+def pred_accuracy(preds,labs):
+    actors = len(preds[0]) 
+    acc = (actors+1)*[0]
+    for i in range(len(preds)):
+        all_match = True
+        for j in range(actors):
+            if preds[i][j] == labs[i][j]:
+                acc[j]+=1
+            else:
+                all_match = False
+        if all_match: # All match
+            acc[actors] +=1
+    
+    return [x/len(preds) for x in acc]
+    

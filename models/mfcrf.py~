@@ -1,0 +1,23 @@
+"""
+Factorial Conditional Random Field
+Son N. Tran
+"""
+
+import tensorflow as tf
+import numpy as np
+
+class FCRFGraph(object):
+    def __init__(self):
+        with tf.variable_scope():
+            self.w = tf.get_variable()
+
+class MultiResFCRF(object):
+    def __init__(self,conf,dataset):
+
+    def build_model(self):
+        
+    def run(self):    
+
+def run_epoch():
+    
+
