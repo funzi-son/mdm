@@ -958,4 +958,396 @@ Traceback (most recent call last):
   File "/home/tra161/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples/run.py", line 67, in main
     alpha = int(sys.argv[4])
 IndexError: list index out of range
-tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ./run.sh mdm casas dis
+MDM needs alpha, beta, gamma
+Usage:
+run.sh <model_name> <data_name> <state_type> [alpha] [beta] [gamma]
+ --- model_name:
+ ---------- hmm     : group-dependency HMMs
+ ---------- xhmm    : grouped-dependency coupled HMMs 
+ ---------- phmm    : parallel HMMs
+ ---------- chmm    : coupled HMMs
+ ---------- fhmm    : factorial HMMs
+ ---------- cd-fhmm : crossed-dependency factorial HMMs
+ ---------- md-hmm  : ensembles of HMMs
+ ---------- mdm     : mixed-dependency model
+ --- data_name:
+ ---------- casas: CASAS
+ ---------- arasa: ARAS House A
+ ---------- arasb: ARAS House B
+ --- state_type: dis , vec1, vec2, vec3
+ --- alpha, beta, gamma: must be set if model_name=mdm
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code$ ls
+mdm
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code$ mv mdm mdm_
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code$ git clone git@github.com:sFunzi/mdm.git
+Cloning into 'mdm'...
+Warning: Permanently added the RSA host key for IP address '192.30.255.113' to the list of known hosts.
+remote: Counting objects: 3, done.        
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0        
+Receiving objects: 100% (3/3), done.
+Checking connectivity... done.
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code$ cd mdm
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ ls
+README.md
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ mv mdm_/* .
+mv: cannot stat 'mdm_/*': No such file or directory
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ mv ../mdm_/* .
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ ls
+data  examples  __init__.py  models  README.md
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ git add .
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ git commit -m"code"
+[master 2e82701] code
+ 205 files changed, 5215167 insertions(+)
+ create mode 100644 __init__.py
+ create mode 100644 data/__pycache__/aras.cpython-35.pyc
+ create mode 100644 data/__pycache__/aras_.cpython-35.pyc
+ create mode 100644 data/__pycache__/casas_adlmr.cpython-35.pyc
+ create mode 100644 data/__pycache__/casas_adlmr_.cpython-35.pyc
+ create mode 100644 data/aras.py
+ create mode 100644 data/aras.py~
+ create mode 100644 data/aras_.py
+ create mode 100644 data/aras_.py~
+ create mode 100644 data/aras_a_analysis.py~
+ create mode 100644 data/aras_analysis.py
+ create mode 100644 data/aras_analysis.py~
+ create mode 100644 data/casas_adlmr.py
+ create mode 100644 data/casas_adlmr.py~
+ create mode 100644 data/casas_adlmr_.py
+ create mode 100644 data/casas_adlmr_.py~
+ create mode 100644 data/casas_adlmr_analys.py
+ create mode 100644 data/casas_adlmr_analys.py~
+ create mode 100644 data/casas_data_note.txt
+ create mode 100644 data/casas_data_note.txt~
+ create mode 100644 data/conll2000_ftr_ext.py
+ create mode 100644 data/conll2000_ftr_ext.py~
+ create mode 100644 data/convert2mallet_format.py
+ create mode 100644 data/convert2mallet_format.py~
+ create mode 100755 data/convert2mallet_format.sh
+ create mode 100755 data/convert2mallet_format.sh~
+ create mode 100644 data/non_temporal_aras_gen.py~
+ create mode 100755 data/non_temporal_aras_gen.sh~
+ create mode 100644 data/non_temporal_data_generate.py
+ create mode 100644 data/non_temporal_data_generate.py~
+ create mode 100755 data/non_temporal_data_generate.sh
+ create mode 100644 data/penn_tree_pos.py
+ create mode 100644 data/penn_tree_pos.py~
+ create mode 100644 data/pos.py~
+ create mode 100644 data/pos_data_analysis.py
+ create mode 100644 data/pos_data_analysis.py~
+ create mode 100644 examples/#*shell*#
+ create mode 100644 examples/*shell*
+ create mode 120000 examples/.#*shell*
+ create mode 100644 examples/__init__.py
+ create mode 100644 examples/aras/House_A/DAY_1.txt
+ create mode 100644 examples/aras/House_A/DAY_10.txt
+ create mode 100644 examples/aras/House_A/DAY_11.txt
+ create mode 100644 examples/aras/House_A/DAY_12.txt
+ create mode 100644 examples/aras/House_A/DAY_13.txt
+ create mode 100644 examples/aras/House_A/DAY_14.txt
+ create mode 100644 examples/aras/House_A/DAY_15.txt
+ create mode 100644 examples/aras/House_A/DAY_16.txt
+ create mode 100644 examples/aras/House_A/DAY_17.txt
+ create mode 100644 examples/aras/House_A/DAY_18.txt
+ create mode 100644 examples/aras/House_A/DAY_19.txt
+ create mode 100644 examples/aras/House_A/DAY_2.txt
+ create mode 100644 examples/aras/House_A/DAY_20.txt
+ create mode 100644 examples/aras/House_A/DAY_21.txt
+ create mode 100644 examples/aras/House_A/DAY_22.txt
+ create mode 100644 examples/aras/House_A/DAY_23.txt
+ create mode 100644 examples/aras/House_A/DAY_24.txt
+ create mode 100644 examples/aras/House_A/DAY_25.txt
+ create mode 100644 examples/aras/House_A/DAY_26.txt
+ create mode 100644 examples/aras/House_A/DAY_27.txt
+ create mode 100644 examples/aras/House_A/DAY_28.txt
+ create mode 100644 examples/aras/House_A/DAY_29.txt
+ create mode 100644 examples/aras/House_A/DAY_3.txt
+ create mode 100644 examples/aras/House_A/DAY_30.txt
+ create mode 100644 examples/aras/House_A/DAY_4.txt
+ create mode 100644 examples/aras/House_A/DAY_5.txt
+ create mode 100644 examples/aras/House_A/DAY_6.txt
+ create mode 100644 examples/aras/House_A/DAY_7.txt
+ create mode 100644 examples/aras/House_A/DAY_8.txt
+ create mode 100644 examples/aras/House_A/DAY_9.txt
+ create mode 100644 examples/aras/House_A/README
+ create mode 100644 examples/aras/House_B/DAY_1.txt
+ create mode 100644 examples/aras/House_B/DAY_10.txt
+ create mode 100644 examples/aras/House_B/DAY_11.txt
+ create mode 100644 examples/aras/House_B/DAY_12.txt
+ create mode 100644 examples/aras/House_B/DAY_13.txt
+ create mode 100644 examples/aras/House_B/DAY_14.txt
+ create mode 100644 examples/aras/House_B/DAY_15.txt
+ create mode 100644 examples/aras/House_B/DAY_16.txt
+ create mode 100644 examples/aras/House_B/DAY_17.txt
+ create mode 100644 examples/aras/House_B/DAY_18.txt
+ create mode 100644 examples/aras/House_B/DAY_19.txt
+ create mode 100644 examples/aras/House_B/DAY_2.txt
+ create mode 100644 examples/aras/House_B/DAY_20.txt
+ create mode 100644 examples/aras/House_B/DAY_21.txt
+ create mode 100644 examples/aras/House_B/DAY_22.txt
+ create mode 100644 examples/aras/House_B/DAY_23.txt
+ create mode 100644 examples/aras/House_B/DAY_24.txt
+ create mode 100644 examples/aras/House_B/DAY_25.txt
+ create mode 100644 examples/aras/House_B/DAY_26.txt
+ create mode 100644 examples/aras/House_B/DAY_27.txt
+ create mode 100644 examples/aras/House_B/DAY_28.txt
+ create mode 100644 examples/aras/House_B/DAY_29.txt
+ create mode 100644 examples/aras/House_B/DAY_3.txt
+ create mode 100644 examples/aras/House_B/DAY_30.txt
+ create mode 100644 examples/aras/House_B/DAY_4.txt
+ create mode 100644 examples/aras/House_B/DAY_5.txt
+ create mode 100644 examples/aras/House_B/DAY_6.txt
+ create mode 100644 examples/aras/House_B/DAY_7.txt
+ create mode 100644 examples/aras/House_B/DAY_8.txt
+ create mode 100644 examples/aras/House_B/DAY_9.txt
+ create mode 100644 examples/aras/House_B/README
+ create mode 100644 examples/casas/Chinook_3_Bedroom.jpg
+ create mode 100644 examples/casas/P01.txt
+ create mode 100644 examples/casas/P02.txt
+ create mode 100644 examples/casas/P03.txt
+ create mode 100644 examples/casas/P04.txt
+ create mode 100644 examples/casas/P05.txt
+ create mode 100644 examples/casas/P06.txt
+ create mode 100644 examples/casas/P06.txt~
+ create mode 100644 examples/casas/P07.txt
+ create mode 100644 examples/casas/P08.txt
+ create mode 100644 examples/casas/P09.txt
+ create mode 100644 examples/casas/P10.txt
+ create mode 100644 examples/casas/P11.txt
+ create mode 100644 examples/casas/P12.txt
+ create mode 100644 examples/casas/P13.txt
+ create mode 100644 examples/casas/P14.txt
+ create mode 100644 examples/casas/P15.txt
+ create mode 100644 examples/casas/P16.txt
+ create mode 100644 examples/casas/P17.txt
+ create mode 100644 examples/casas/P18.txt
+ create mode 100644 examples/casas/P19.txt
+ create mode 100644 examples/casas/P20.txt
+ create mode 100644 examples/casas/P21.txt
+ create mode 100644 examples/casas/P22.txt
+ create mode 100644 examples/casas/P23.txt
+ create mode 100644 examples/casas/P23.txt~
+ create mode 100644 examples/casas/P24.txt
+ create mode 100644 examples/casas/P25.txt
+ create mode 100644 examples/casas/P26.txt
+ create mode 100644 examples/casas/README
+ create mode 100755 examples/hmm_run.sh
+ create mode 100644 examples/hmm_run_old.py
+ create mode 100644 examples/hmm_toy_example.py
+ create mode 100755 examples/hmm_toy_example.sh
+ create mode 100644 examples/mixhmm_da_run.py
+ create mode 100755 examples/mixhmm_da_run.sh
+ create mode 100644 examples/mixhmm_run.py
+ create mode 100755 examples/mixhmm_run.sh
+ create mode 100644 examples/result_analysis.py
+ create mode 100755 examples/result_analysis.sh
+ create mode 100644 examples/rnn_run.py
+ create mode 100755 examples/rnn_run.sh
+ create mode 100644 examples/run.py
+ create mode 100644 examples/run.py~
+ create mode 100755 examples/run.sh
+ create mode 100755 examples/run.sh~
+ create mode 100644 models/__init__.py
+ create mode 100644 models/__pycache__/__init__.cpython-35.pyc
+ create mode 100644 models/__pycache__/accuracy.cpython-35.pyc
+ create mode 100644 models/__pycache__/chmm.cpython-35.pyc
+ create mode 100644 models/__pycache__/crf.cpython-35.pyc
+ create mode 100644 models/__pycache__/fhmm.cpython-35.pyc
+ create mode 100644 models/__pycache__/hmm.cpython-35.pyc
+ create mode 100644 models/__pycache__/hmms.cpython-35.pyc
+ create mode 100644 models/__pycache__/ifhmm.cpython-35.pyc
+ create mode 100644 models/__pycache__/mdm.cpython-35.pyc
+ create mode 100644 models/__pycache__/mdm_da.cpython-35.pyc
+ create mode 100644 models/__pycache__/mixhmm.cpython-35.pyc
+ create mode 100644 models/__pycache__/mixhmm_casas.cpython-35.pyc
+ create mode 100644 models/__pycache__/phmm.cpython-35.pyc
+ create mode 100644 models/__pycache__/rnn.cpython-35.pyc
+ create mode 100644 models/__pycache__/sparse_rnn_cell.cpython-35.pyc
+ create mode 100644 models/__pycache__/utils.cpython-35.pyc
+ create mode 100644 models/accuracy.py~
+ create mode 100644 models/chmm.py
+ create mode 100644 models/chmm.py~
+ create mode 100644 models/crf.py
+ create mode 100644 models/crf.py~
+ create mode 100644 models/drbmcell.py
+ create mode 100644 models/drbmcell.py~
+ create mode 100644 models/emsemble_hmm.py~
+ create mode 100644 models/fcrf.py~
+ create mode 100644 models/fhmm.py
+ create mode 100644 models/fhmm.py~
+ create mode 100644 models/hmm.py
+ create mode 100644 models/hmms.py
+ create mode 100644 models/hmms.py~
+ create mode 100644 models/hmmtracker.py
+ create mode 100644 models/ifhmm.py
+ create mode 100644 models/ifhmm.py~
+ create mode 100644 models/lstm.py
+ create mode 100644 models/mdm.py
+ create mode 100644 models/mdm.py~
+ create mode 100644 models/mdm_da.py
+ create mode 100644 models/mdm_da.py~
+ create mode 100644 models/mfcrf.py
+ create mode 100644 models/mfcrf.py~
+ create mode 100644 models/mixhmm.py
+ create mode 100644 models/mixhmm.py~
+ create mode 100644 models/mixhmm_casas.py~
+ create mode 100644 models/multiTracker_HMM.py
+ create mode 100644 models/phmm.py
+ create mode 100644 models/phmm.py~
+ create mode 100644 models/rnn.py
+ create mode 100644 models/rnn.py~
+ create mode 100644 models/rnn_test.py
+ create mode 100644 models/rnn_test.py~
+ create mode 100644 models/rtdrbm.py~
+ create mode 100644 models/rtdrbm_tf.py
+ create mode 100644 models/simplehmm.py
+ create mode 100644 models/sparse_rnn_cell.py
+ create mode 100644 models/utils.py
+ create mode 100644 models/utils.py~
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 194, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (189/189), done.
+Writing objects: 100% (194/194), 919.20 KiB | 113.00 KiB/s, done.
+Total 194 (delta 81), reused 0 (delta 0)
+remote: Resolving deltas: 100% (81/81), done.        
+To git@github.com:sFunzi/mdm.git
+   335cadd..2e82701  master -> master
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ ls
+data  examples  __init__.py  models  README.md
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ ls
+data  examples  __init__.py  models  README.md
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ cd data/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/data$ ls
+aras_a_analysis.py~     casas_adlmr.py             non_temporal_aras_gen.sh~
+aras_analysis.py        casas_adlmr.py~            non_temporal_data_generate.py
+aras_analysis.py~       casas_data_note.txt        non_temporal_data_generate.py~
+aras_.py                casas_data_note.txt~       non_temporal_data_generate.sh
+aras_.py~               conll2000_ftr_ext.py       penn_tree_pos.py
+aras.py                 conll2000_ftr_ext.py~      penn_tree_pos.py~
+aras.py~                convert2mallet_format.py   pos_data_analysis.py
+casas_adlmr_analys.py   convert2mallet_format.py~  pos_data_analysis.py~
+casas_adlmr_analys.py~  convert2mallet_format.sh   pos.py~
+casas_adlmr_.py         convert2mallet_format.sh~  __pycache__
+casas_adlmr_.py~        non_temporal_aras_gen.py~
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/data$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ ls
+data  examples  __init__.py  models  README.md
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ cd examples/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ ls
+~               hmm_run.sh          mixhmm_da_run.py  result_analysis.py  run.py   *shell*
+aras            hmm_toy_example.py  mixhmm_da_run.sh  result_analysis.sh  run.py~  #*shell*#
+casas           hmm_toy_example.sh  mixhmm_run.py     rnn_run.py          run.sh
+hmm_run_old.py  __init__.py         mixhmm_run.sh     rnn_run.sh          run.sh~
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm/examples$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ ls
+data  examples  __init__.py  models  README.md
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ ls
+data  examples  __init__.py  models  README.md
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ cp ../../ubicomp_2nd/ubicomp_17.pdf mdm.pdf
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential$ git pull
+Already up-to-date.
+tra161@sheep-rbh:~/WORK/projects/multiresidential$ git pull
+Already up-to-date.
+tra161@sheep-rbh:~/WORK/projects/multiresidential$ git add .
+tra161@sheep-rbh:~/WORK/projects/multiresidential$ git commit -m"add paper"
+[master f192ad0] add paper
+ 6 files changed, 169 insertions(+), 187 deletions(-)
+ create mode 160000 Papers/hmm_paper/pub_code/mdm
+tra161@sheep-rbh:~/WORK/projects/multiresidential$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 13, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (13/13), 82.98 KiB | 0 bytes/s, done.
+Total 13 (delta 11), reused 0 (delta 0)
+To ssh://git@bitbucket.csiro.au:7999/csiro_ssh/multiresidential.git
+   d45c5d9..f192ad0  master -> master
+tra161@sheep-rbh:~/WORK/projects/multiresidential$ ls
+bibs  Codes  Data  figs  Notes  pages  Papers  References  TODO.txt  TODO.txt~
+tra161@sheep-rbh:~/WORK/projects/multiresidential$ cd Codes/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Codes$ ls
+cognition  crf_java  data  examples  __init__.py  models
+tra161@sheep-rbh:~/WORK/projects/multiresidential/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Codes$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Codes$ 
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Codes$ cd P
+bash: cd: P: No such file or directory
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Codes$ cd ../Papers/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers$ ls
+benchmark_paper  cognitive_paper  crf_paper  hmm_paper  multilabel_paper  rnn_paper
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers$ cd hmm_paper/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper$ ls
+IJCAI17  __MACOSX  NN  pervasive_comp  pub_code  ubicomp_2nd  ubicomp_rj
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper$ cd ubicomp_2nd/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/ubicomp_2nd$ ls
+acmcopyright.sty             acmlarge.zip                       texput.log
+acmlarge.cls                 ACM-Reference-Format-Journals.bst  ubicomp_17.aux
+acmlarge-guide.pdf           acm-update.pdf                     ubicomp_17.bbl
+acmlarge-mouse.eps           Makefile                           ubicomp_17.blg
+acmlarge-mouse.pdf           Qing_comments.pdf                  ubicomp_17.log
+acmlarge-sample.bbl          readme.txt                         ubicomp_17.pdf
+acmlarge-sample-bibfile.bib  reviewers_comments.txt             ubicomp_17.tex
+acmlarge-sample.pdf          sample1.bbl                        ubicomp_17.tex~
+acmlarge-sample.tex          sample1.pdf
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/ubicomp_2nd$ cd ..
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper$ ls
+IJCAI17  __MACOSX  NN  pervasive_comp  pub_code  ubicomp_2nd  ubicomp_rj
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper$ cd pub_code/
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code$ ls
+mdm  mdm_
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code$ cd mdm
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ ls
+data  examples  __init__.py  mdm.pdf  models  README.md
+tra161@sheep-rbh:~/WORK/projects/multiresidential/Papers/hmm_paper/pub_code/mdm$ git pull
+remote: Counting objects: 3, done.        
