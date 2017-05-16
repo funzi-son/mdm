@@ -45,7 +45,7 @@ Example:
 
 Results of  Model: hmm, Data:casas,State: dis
 
-        R1    |   R2   |  All
+        R1    |   R2 |  All
           
 Day  1      46.736   |   62.166   |   40.504
 
